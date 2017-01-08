@@ -6,7 +6,7 @@ class RecursionSpec extends FlatSpec {
 
     //TODO make this with test generators or other method, as this way is too repetitive (this can be done in other non copy and paste ways)
   "factImp" should "be 0" in {
-    assert(recursion.factImp(0) === 1)
+    assert(recursion.factImp(0) === 1) //the triple equal === method is given by scalatest, it will print out nthe values that are failing in case of error
   }
 
   "factImp" should "be 1" in {
