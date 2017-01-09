@@ -33,8 +33,8 @@ object hogs {
   //signature:
   def findFirst[A](ss: Array[A], p: A => Boolean): Int = {
 
-    //Try(ss.zipWithIndex.filter{ case (s,id) => p(s) }(0)._2)getOrElse(-1)
-    ss.zipWithIndex.filter{ case (s,id) => p(s) }.headOption.getOrElse(-1)
+    Try(ss.zipWithIndex.filter{ case (s,id) => p(s) }(0)._2)getOrElse(-1)
+    //ss.zipWithIndex.filter{ case (s,id) => p(s) }.headOption._2.getOrElse(-1)
   }
 
 
