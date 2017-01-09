@@ -97,4 +97,7 @@ class RecursionSpec extends FlatSpec {
     }
     succeed
   }
+
+
+  //TODO Exercise: Make the tests for the Fibonacci implementation
 }

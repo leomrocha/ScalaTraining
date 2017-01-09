@@ -9,6 +9,22 @@ object recursion {
     println("This is a test")
     println( 1 until 5) // Range object that contains 1,2,3,4
     println (1 to 5 ) // Range object that contains 1 2 3 4 5
+
+    //TODO change this to another way of doing it, instead of copy and paste
+    println(fibImp(0))
+    println(fibImp(1))
+    println(fibImp(2))
+    println(fibImp(3))
+    println(fibImp(4))
+    println(fibImp(5))
+
+    println(fibRec(0))
+    println(fibRec(1))
+    println(fibRec(2))
+    println(fibRec(3))
+    println(fibRec(4))
+    println(fibRec(5))
+
     val v = factTailRec(6)
   }
 
@@ -69,12 +85,34 @@ object recursion {
   //Write the test for it too under the src/test/scala directory
 
   def fibImp(n: Int): Int = {
-    ???
+    require(n>=0)
+    var n1 = 1
+    var n2 = 0
+    var fib = 0
+    var pos = 0
+    n match {
+      case 0 => fib = 0
+      case 1 => fib = 1
+      case x => for (i <- 1 until x) {
+          fib = n1+n2
+          n2=n1
+          n1=fib
+          pos = i
+        }
+    }
+    fib
   }
   //Exercise 4
   //Write a Fibonacci function in a recursive way, try to make it tail recursive
   //Write the test for it too under the src/test/scala directory
   def fibRec(n: Int): Int = {
-    ???
+    require(n>=0) //ensures
+    @annotation.tailrec //ensures that the compiler will enforce tail recursion
+    def go(n:Int, n1:Int, n2:Int): Int = n match { //using accumulators help create tail recursive functions
+      case 0 => n2
+      case 1 => n1
+      case x => go(x-1, n1+n2, n1)
+    }
+    go(n,1,0)
   }
 }
