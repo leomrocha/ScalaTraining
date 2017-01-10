@@ -93,7 +93,8 @@ object recursion {
     n match {
       case 0 => fib = 0
       case 1 => fib = 1
-      case x => for (i <- 1 until x) {
+      //case x => for (i <- 1 until x) {
+      case x => for (i <- 2 to x) {
           fib = n1+n2
           n2=n1
           n1=fib
