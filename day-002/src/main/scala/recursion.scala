@@ -74,7 +74,7 @@ object recursion {
     @annotation.tailrec // tail recursion enforced
     def go(n: Int, acc:Int): Int = //internal helper function that actually defines the recursion
       n match {
-        case 0 => 1
+        case 0 => acc
         case x => go(x - 1, acc * x) //tail recursive call
       }
     go(n, 1) //initial state of the function
