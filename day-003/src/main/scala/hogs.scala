@@ -74,6 +74,14 @@ object hogs {
     (a: A) => b: B => f(a,b) //this means: return a function that takes a of type A, that takes a value b of type B and returns the f(a,b) value
       //this is equivalent to the following statement:
     //(a: A) => ( b: B => f(a,b) ) // the arrow => operator is associative from the right
+    // and actually, this is the same as defining a function and then returning it:
+    //  def curr(a: A): B => C = {
+    //    def curr2(b:B): C = {
+    //      f(a,b)
+    //    }
+    //    curr2
+    //  }
+    //curr(a)(b)
 
   }
 
@@ -83,6 +91,7 @@ object hogs {
     // In this case is the opposite of the previous one, what we do is return a function that basically will do both calls
     //sequentially, but in a transparent manner for the function user
     (a:A, b:B) => f(a)(b)
+    //the same analysis can be done as the curry function, defining an internal function and returning it
   }
 
   //Exercise 6:
@@ -90,6 +99,7 @@ object hogs {
   def compose[A,B,C](f: B =>C, g: A=>B): A => C = {
     //Function composition is basically applying the functions with the result of the previous one
     a:A => f(g(a))
+    //the same analysis can be done as the curry function, defining an internal function and returning it
   }
 
 }

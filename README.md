@@ -17,6 +17,15 @@ Each agenda should contain:
 3. Group work
 4. Discussion
 
+### Two GREAT Cheet Sheets that is a MUST HAVE on the Scala training 
+
+I was having doubts about creating one, but there are already great resources, please check:
+
+* [The official one](http://docs.scala-lang.org/cheatsheets/)
+
+* [A really good one in Github](https://github.com/lampepfl/progfun-wiki/blob/gh-pages/CheatSheet.md)
+
+
 
 
 
