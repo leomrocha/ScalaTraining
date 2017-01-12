@@ -16,7 +16,7 @@ object List {
   def sum(ints: List[Int]): Int = ???
   //def sum(ds: List[Double]): Double = ???
   //Exercise define for Int and Double the product function
-  def product(ints: List[Int]): Int = ???
+  def product(ds: List[Int]): Int = ???
 
 
   //Note that the code is almost the same in both cases, would be better to i
