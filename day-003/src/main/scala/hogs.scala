@@ -70,14 +70,26 @@ object hogs {
 
   //Exercise 4:
   // Write a function that converts a function f of two arguments into a function of one argument that partially applies f
-  //def curry[A,B,C](f: (A,B)=>C): A => (B=>C)
+  def curry[A,B,C](f: (A,B)=>C): A => (B=>C) = {
+    (a: A) => b: B => f(a,b) //this means: return a function that takes a of type A, that takes a value b of type B and returns the f(a,b) value
+      //this is equivalent to the following statement:
+    //(a: A) => ( b: B => f(a,b) ) // the arrow => operator is associative from the right
+
+  }
 
   //Exercise 5:
   // Write a function that reverts the operation from the previous one
-  //def uncurry[A,B,C](f: A => B =>C): (A,B) => C
+  def uncurry[A,B,C](f: A => B =>C): (A,B) => C = {
+    // In this case is the opposite of the previous one, what we do is return a function that basically will do both calls
+    //sequentially, but in a transparent manner for the function user
+    (a:A, b:B) => f(a)(b)
+  }
 
   //Exercise 6:
   //Function composition
-  //def compose[A,B,C](f: B =>C, g: A=>B): A => C
+  def compose[A,B,C](f: B =>C, g: A=>B): A => C = {
+    //Function composition is basically applying the functions with the result of the previous one
+    a:A => f(g(a))
+  }
 
 }
