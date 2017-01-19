@@ -269,16 +269,16 @@ object List {
 
   //Exercise: Implement
   //Returns a list consisting of the first n elements of the list
-  def take(n: Int): List[A] = ???
+  def take[A](n: Int): List[A] = ???
 
   //Exercise: Implement a function thatReturns a list consisting of the longest valid prefix of this whose elements all pass the predicate f
-  def takeWhile(f: A => Boolean): List[A]  = ???
+  def takeWhile[A](f: A => Boolean): List[A]  = ???
 
   //Exercise: Implement a function that Returns true if and only if all elements of this pass the predicate f
-  def forall(f: A => Boolean): Boolean = ???
+  def forall[A](f: A => Boolean): Boolean = ???
 
   //Exercise: Implement a function that Returns true if any element of this passes the predicate f
-  def exists(f: A => Boolean): Boolean = ???
+  def exists[A](f: A => Boolean): Boolean = ???
 
   // Exercise: Implement a function that checks whether a list contains a sub-sequence or not
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = ???
